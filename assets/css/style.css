@@ -1,0 +1,66 @@
+/* Font Import */
+@font-face { 
+	font-family: "Overwatch"; 
+	src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
+}
+
+@font-face { 
+	font-family: "bignoodle";
+	src: url("big_noodle_titling.ttf") format('woff');
+}
+
+@font-face { 
+	font-family: "bignoodle-oblique"; 
+	src: url("big_noodle_titling_oblique.ttf") format('woff'); 
+}
+
+/* Universal Styling */
+
+body {
+	background-image: url(../images/Hanamura.jpg);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Header Styling */
+
+.Page_Header {
+	background-color: gray;
+	border: 1px solid yellow;
+	margin: 10px auto;
+	width: 50%;
+}
+
+h1 {
+	font-family: "bignoodle";
+	color: white;
+	line-height: 100px;
+	font-size: 100px;
+	text-align: center;
+	text-shadow: 0 4px 5px rgba(60,72,96,.5);
+}
+
+
+/* Body Styling */
+
+.container {
+	width: 980px;
+	margin: 30px auto;
+}
+
+.content {
+	background-color: gray;
+	border: 1px solid yellow;
+	margin: 10px auto;
+	width: 33%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
