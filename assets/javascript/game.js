@@ -18,7 +18,8 @@ var el = document.getElementById("hello");
 	el3 = document.getElementById("lifeCounter"),
 	el4 = document.getElementById("wordToGuess"),
 	el5 = document.getElementById("wins"),
-	el6 = document.getElementById("losses");
+	el6 = document.getElementById("losses"),
+	el7 = document.getElementById("hangmanImg");
 
 
 //newGame function determines everything that happens upon a game load
@@ -33,6 +34,7 @@ function newGame() {
 	el3.innerHTML = lives;
 	el5.innerHTML = winCount;
 	el6.innerHTML = lossCount;
+	el7.innerHTML = "";
 	//console out the word chosen for debug/cheating purposes
 	console.log("Word to be guessed: " + targetWord);
 	//make blanks function invoked
@@ -89,13 +91,14 @@ function fillIn () {
 	}
 }
 
-//Clears old blanks on game restart
+//Clears old blanks and image on game restart
 function newDisplay () {
 	//as long as there is a child..
 	while (el4.firstChild) {
 		//we will continue to remove the first child from the DOM
 		el4.removeChild(el4.firstChild)
 	}
+
 }	
 
 //Need a function that will write the userguesses to the DOM when incorrect
@@ -130,6 +133,11 @@ function checkGuess () {
 	}
 }
 
+//function to display image of overwatch hero upon victory
+function displayImg () {
+	el7.innerHTML = "<img src='assets/images/" + targetWord + ".png'>"
+}
+
 //Function to check if win/loss condition has been met
 function checkWin () {
 	//if the number of letters in the word is equal to the number of correct guesses and we still have lives...
@@ -140,6 +148,8 @@ function checkWin () {
 		console.log("win count: " + winCount);
 		//let player know they were successful
 		el.innerHTML = "You Win!!!"
+		//display hero image
+		displayImg();
 		//and we delay for a few seconds to display image and let your victory really sink in
 		setTimeout(resetGame, 4000);
 
@@ -149,7 +159,9 @@ function checkWin () {
 		//then we lose :(
 		lossCount++;
 		//let the player know they failed
-		el.innerHTML = "You LOST!!!!"
+		el.innerHTML = "You LOST!!!! Correct answer was: " + targetWord;
+		//show them correct hero
+		displayImg();
 		//we even let the console know of our failure
 		console.log("loss count: " + lossCount);
 		//and we give time to grieve before the game restarts
