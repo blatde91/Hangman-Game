@@ -1,6 +1,6 @@
 # Hangman-Game
 
-View the project [here!] (https://github.com/blatde91/Hangman-Game)
+View the project [here!](https://github.com/blatde91/Hangman-Game)
 
 An Overwatch-Themed hangman-style game created using Javascript.
 
